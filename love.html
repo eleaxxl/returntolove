@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>回到愛裡</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="無條件的愛是一種勇氣。這正是為什麼要回到愛裡。回到愛裡｜工作坊・台中場，2026.12.12。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+  /* Layout: one quiet reading column under a breathing halo, ending in the workshop invitation */
+  :root {
+    --bg: #F6ECEA;
+    --paper: #FFFAF8;
+    --ink: #3B2733;
+    --ink-soft: #6E5663;
+    --rose: #A9475F;
+    --rose-deep: #8A3550;
+    --gold: #C49A45;
+    --line: #E6D2CF;
+    --halo: #EBC9C6;
+    --halo-core: #F1D9D6;
+    --on-rose: #FFFFFF;
+    --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+    --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #231A20; --paper: #2D2229; --ink: #F1E4E6; --ink-soft: #C2AAB3;
+      --rose: #D9798F; --rose-deep: #E8A0B0; --gold: #D4B06A; --line: #45343D;
+      --halo: #4A3440; --halo-core: #3A2A33; --on-rose: #231A20;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #231A20; --paper: #2D2229; --ink: #F1E4E6; --ink-soft: #C2AAB3;
+    --rose: #D9798F; --rose-deep: #E8A0B0; --gold: #D4B06A; --line: #45343D;
+    --halo: #4A3440; --halo-core: #3A2A33; --on-rose: #231A20;
+    color-scheme: dark;
+  }
+
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding-block: 80px 64px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    text-align: center;
+  }
+  .halo {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: min(560px, 130vw);
+    max-width: none;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .halo circle { fill: none; stroke: var(--halo); }
+  .halo .core { fill: var(--halo-core); stroke: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .halo .ring { animation: breathe 7s ease-in-out infinite; transform-origin: 50% 50%; }
+    .halo .ring:nth-of-type(3) { animation-delay: .6s; }
+    .halo .ring:nth-of-type(4) { animation-delay: 1.2s; }
+    @keyframes breathe { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.025); } }
+  }
+  .hero-inner { position: relative; }
+  .hero h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(48px, 13vw, 96px);
+    line-height: 1.15;
+    letter-spacing: .12em;
+    color: var(--rose-deep);
+  }
+  .hero .thesis {
+    margin: 18px 0 0;
+    font-family: var(--serif);
+    font-size: clamp(16px, 4.2vw, 20px);
+    letter-spacing: .14em;
+    color: var(--ink);
+  }
+
+  article {
+    max-width: 36em;
+    margin: 0 auto;
+    padding-block: 8px 24px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    box-sizing: content-box;
+  }
+  article p {
+    margin: 0 0 1.3em;
+    font-family: var(--serif);
+    font-size: 17.5px;
+    line-height: 2.05;
+    text-align: justify;
+    text-justify: inter-character;
+  }
+  article h2 {
+    margin: 2.6em 0 1em;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: .08em;
+    color: var(--rose-deep);
+    display: flex; align-items: center; gap: 12px;
+    text-wrap: balance;
+  }
+  article h2::before {
+    content: "";
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex: none;
+  }
+  article p.turn {
+    font-size: 20px;
+    color: var(--rose-deep);
+    text-align: left;
+  }
+  .closing {
+    margin: 3em 0 1em;
+    padding: 1.6em 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  .closing p {
+    margin: 0;
+    font-size: clamp(19px, 4.8vw, 23px);
+    line-height: 1.9;
+    font-weight: 600;
+    color: var(--rose-deep);
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .invite {
+    max-width: 36em;
+    margin: 40px auto 0;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 0 72px;
+    box-sizing: content-box;
+  }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 30px 24px 28px;
+  }
+  .card h2 {
+    margin: 0 0 18px;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: .08em;
+    color: var(--rose-deep);
+    text-wrap: balance;
+  }
+  dl.facts { margin: 0; border-top: 1px solid var(--line); }
+  .facts div {
+    display: grid;
+    grid-template-columns: 5.5em minmax(0, 1fr);
+    gap: 12px;
+    padding: 11px 2px;
+    border-bottom: 1px solid var(--line);
+  }
+  .facts dt { color: var(--ink-soft); }
+  .facts dd { margin: 0; font-weight: 500; font-variant-numeric: tabular-nums; }
+  .facts .aside { display: block; font-weight: 400; font-size: 14px; color: var(--ink-soft); }
+  .notes { margin: 18px 0 24px; padding: 0; list-style: none; display: grid; gap: 4px; font-size: 15px; color: var(--ink-soft); }
+  .cta {
+    display: block;
+    padding: 15px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    color: var(--on-rose);
+    background: var(--rose);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background .15s;
+  }
+  .cta:hover { background: var(--rose-deep); }
+  .cta:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+  footer {
+    text-align: center;
+    padding-block: 0 40px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+</style>
+
+</head>
+<body>
+<header class="hero">
+  <svg class="halo" viewBox="0 0 400 400" aria-hidden="true">
+    <circle class="core" cx="200" cy="200" r="92"/>
+    <circle class="ring" cx="200" cy="200" r="130" stroke-width="1.2"/>
+    <circle class="ring" cx="200" cy="200" r="160" stroke-width="1"/>
+    <circle class="ring" cx="200" cy="200" r="190" stroke-width=".8"/>
+  </svg>
+  <div class="hero-inner">
+    <h1>回到愛裡</h1>
+    <p class="thesis">無條件的愛是一種勇氣</p>
+  </div>
+</header>
+
+<article>
+  <p>究竟什麼是愛呢？在我們的文化裡，「愛」似乎是比較少被強調的字眼。這可以說是一種弔詭，因為愛滿盈於我們的生活中，卻有意無意地在言談與互動中隱藏起來。這種克制，甚至讓我們提到「愛」時產生某種羞恥感，也讓我們表達愛時出現了扭曲。</p>
+
+  <p>扭曲，我們都很熟悉。它常常長成擔心的樣子：「這麼晚了還不回家？」長成批評的樣子：「你看看別人家的孩子。」長成犧牲的樣子：「我做這些都是為了你。」也長成控制的樣子：「我是為你好。」這些話的底層，往往都是愛，只是「愛你在心口難開」，難到連說話的人都認不出來，聽的人就只剩下壓力與委屈。</p>
+
+  <p>前陣子在家族排列中，我們又一次清楚看見：人為了尋求安全感，會不自覺地投射，並反覆上演一些很戲劇化的劇碼。吵架、冷戰、討好、離開又回來。然而在那些看似混亂的情節背後，其實都是同一個問題：「你還愛我嗎？愛還在嗎？」我們用盡各種方法，只是為了確認那份愛一直都在。</p>
+
+  <h2>愛是一門藝術，而不是一種運氣</h2>
+
+  <p>心理學家弗洛姆在《愛的藝術》裡面說道：大多數人把愛當成「被愛」的問題，而不是「去愛」的問題。我們努力讓自己更值得被愛，變得更成功、更有魅力、更乖巧，卻很少問自己：我有沒有愛的能力？</p>
+
+  <p>弗洛姆認為，人們常以為愛的困難在於「找到對的對象」，而不在於自身的能力。於是愛變成了一種運氣，得之，我幸；不得，我命。但「愛是一門藝術」，就像音樂、繪畫一樣，需要學習與練習。它不是一種「墜入」的狀態，而是一種主動的、持續的「站立」。</p>
+
+  <p>他區分了兩種愛：不成熟的愛本質是「交換」，成熟的愛則是「給予」。換句話說，就如我們提過的「領袖力」原則，一個真正會愛的人，在給予中感受到的是 BEING 的豐盛，而不是小我的匱乏。</p>
+
+  <h2>慈悲：沒有條件的愛</h2>
+
+  <p>最近讀書會在談《金剛經》，我也藉之複習了一圈如來的佛理。就如我前面提到的，漢傳的佛法裡也不太講愛，它講「慈悲」。《大智度論》說：「大慈與一切眾生樂，大悲拔一切眾生苦。」慈是給予快樂，悲是拔除痛苦。</p>
+
+  <p>慈悲，有三個層次：眾生緣慈悲、法緣慈悲、無緣慈悲。最初，我們對特定的人生起慈悲，這是有對象、有條件的；漸漸地，我們看見一切眾生都在苦中，慈悲不再只為某個人；最後是「無緣大慈，同體大悲」，也就是說，這份給予，不再需要任何理由，不需要對方值得，不需要對方回應，因為我們看見了彼此本來就是一體。</p>
+
+  <p>有意思的是，弗洛姆的結論也說，愛不是與某人的關係，而是一種態度，這個態度決定了我們與世界的連結方式。換言之，我們懷疑，我們焦慮，我們反覆要去確認「愛一直都在」……其實不正是「失去與世界的連結」的一種表徵？</p>
+
+  <h2>無條件的愛是一種勇氣</h2>
+
+  <p class="turn">那麼，我們為什麼會失去這份連結？</p>
+
+  <p>因為我們以為愛是有條件的。有條件的愛比較安全。「你對我好，我就對你好」，這是一份合約，有保障、可預期，萬一對方違約，我們也有理由收回。而無條件的愛意味著：我先打開，不確定你會不會回應；我讓你看見真實的我，不確定你會不會離開；我允許你成為你自己，即使那不是我期待的樣子。</p>
+
+  <p>弗洛姆說，愛是一種信念的行動。去愛，就是在沒有任何保證的情況下投入自己。這需要的不是技巧，而是勇氣。一份願意相信愛一直都在的勇氣，一份願意放手去給予的勇氣。</p>
+
+  <p>所以，「回到愛裡」不是要去哪裡找到愛，也不是要學會什麼新的技巧。我們只是重新承認：「愛沒有離開。」如果還是茫然，還是疑惑，還是膽怯……沒關係，這裡有一群人可以相互鼓舞，讓愛流動——我們一起重新成為那個能夠去愛的人。</p>
+
+  <div class="closing">
+    <p>無條件的愛是一種勇氣。<br>這正是為什麼要回到愛裡。</p>
+  </div>
+</article>
+
+<section class="invite" aria-labelledby="inviteTitle">
+  <div class="card">
+    <h2 id="inviteTitle">回到愛裡｜工作坊・台中場</h2>
+    <dl class="facts">
+      <div><dt>日期</dt><dd>2026.12.12（六）</dd></div>
+      <div><dt>時間</dt><dd>上午 10:00 – 下午 5:30<span class="aside">9:30 開始報到</span></dd></div>
+      <div><dt>地點</dt><dd>慕曦香遇會所<span class="aside">台中市北區福壽街1號（台中捷運文心中清站出口）</span></dd></div>
+      <div><dt>費用</dt><dd>NT$3,600</dd></div>
+      <div><dt>成團人數</dt><dd>16 人（至多 30 人）</dd></div>
+    </dl>
+    <ul class="notes">
+      <li>請先報名，成團後會通知繳費網址。</li>
+      <li>工作坊不用準備任何東西，人與靈魂到場即可。</li>
+    </ul>
+    <a class="cta" href="./">前往報名</a>
+  </div>
+</section>
+
+<footer>回到愛裡｜工作坊・台中場</footer>
+</body>
+</html>

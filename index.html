@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>回到愛裡｜工作坊・台中場 報名</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6ECEA;
+    --paper: #FFFAF8;
+    --ink: #3B2733;
+    --ink-soft: #6E5663;
+    --rose: #A9475F;
+    --rose-deep: #8A3550;
+    --gold: #C49A45;
+    --line: #E6D2CF;
+    --halo: #EBC9C6;
+    --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+    --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    padding: 72px 24px 64px;
+    text-align: center;
+  }
+  .halo {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: min(560px, 130vw);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .halo circle { fill: none; stroke: var(--halo); }
+  .halo .core { fill: #F1D9D6; stroke: none; }
+  @media (prefers-reduced-motion: no-preference) {
+    .halo .ring { animation: breathe 7s ease-in-out infinite; transform-origin: 50% 50%; }
+    .halo .ring:nth-of-type(3) { animation-delay: .6s; }
+    .halo .ring:nth-of-type(4) { animation-delay: 1.2s; }
+    @keyframes breathe { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.025); } }
+  }
+  .hero-inner { position: relative; }
+  .hero h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(48px, 13vw, 96px);
+    line-height: 1.15;
+    letter-spacing: .12em;
+    color: var(--rose-deep);
+  }
+  .hero .sub {
+    margin: 14px 0 0;
+    font-family: var(--serif);
+    font-size: clamp(18px, 4.4vw, 22px);
+    letter-spacing: .2em;
+    color: var(--ink);
+  }
+  .hero .date {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 6px 18px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    font-size: 15px;
+    letter-spacing: .06em;
+    color: var(--ink-soft);
+    background: rgba(255,250,248,.6);
+  }
+
+  /* ---------- Layout ---------- */
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px 64px;
+    display: grid;
+    gap: 28px;
+  }
+  @media (min-width: 900px) {
+    .wrap { grid-template-columns: minmax(0, 1fr) 420px; gap: 48px; align-items: start; }
+    .form-panel { position: sticky; top: calc(24px + env(safe-area-inset-top, 0px)); }
+  }
+
+  section h2 {
+    margin: 0 0 14px;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: 21px;
+    letter-spacing: .08em;
+    color: var(--rose-deep);
+    display: flex; align-items: center; gap: 10px;
+  }
+  section h2::before {
+    content: "";
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex: none;
+  }
+  .story p {
+    margin: 0 0 1.1em;
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 2;
+    max-width: 34em;
+  }
+  .info + .info, .story + .info { margin-top: 40px; }
+
+  dl.facts { margin: 0; border-top: 1px solid var(--line); }
+  .facts div {
+    display: grid;
+    grid-template-columns: 6.5em 1fr;
+    gap: 12px;
+    padding: 12px 2px;
+    border-bottom: 1px solid var(--line);
+  }
+  .facts dt { color: var(--ink-soft); }
+  .facts dd { margin: 0; font-weight: 500; }
+
+  ol.notes { margin: 0; padding-left: 1.4em; }
+  ol.notes li { margin-bottom: .5em; }
+
+  /* ---------- Form ---------- */
+  .form-panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 28px 22px 26px;
+  }
+  .form-panel h2 { margin-bottom: 4px; }
+  .form-hint { margin: 0 0 20px; font-size: 14px; color: var(--ink-soft); }
+  .field { margin-bottom: 18px; }
+  .field > label, .field > .legend {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .req { color: var(--rose); margin-left: 2px; }
+  .opt { color: var(--ink-soft); font-weight: 400; font-size: 13px; margin-left: 4px; }
+  input[type=text], input[type=tel], input[type=email], textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 16px; /* prevents iOS zoom */
+    color: var(--ink);
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 11px 13px;
+    transition: border-color .15s;
+  }
+  textarea { min-height: 96px; resize: vertical; line-height: 1.7; }
+  input:focus, textarea:focus { outline: none; border-color: var(--rose); box-shadow: 0 0 0 3px rgba(169,71,95,.15); }
+  .field.invalid input, .field.invalid textarea { border-color: var(--rose); }
+  .err { display: none; margin-top: 4px; font-size: 13px; color: var(--rose); }
+  .field.invalid .err { display: block; }
+
+  .choices { display: flex; flex-wrap: wrap; gap: 10px; }
+  .choice { position: relative; }
+  .choice input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .choice span {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .choice input:checked + span { background: var(--rose); border-color: var(--rose); color: #fff; }
+  .choice input:focus-visible + span { box-shadow: 0 0 0 3px rgba(169,71,95,.3); }
+
+  .agree { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.7; cursor: pointer; }
+  .agree input { margin-top: 5px; width: 18px; height: 18px; accent-color: var(--rose); flex: none; }
+
+  button.submit {
+    width: 100%;
+    margin-top: 6px;
+    padding: 14px;
+    font: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    color: #fff;
+    background: var(--rose);
+    border: 0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  button.submit:hover { background: var(--rose-deep); }
+  button.submit:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  button.submit:disabled { background: #C9AEB5; cursor: default; }
+
+  .msg {
+    display: none;
+    margin-top: 16px;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+  .msg.show { display: block; }
+  .msg.error { background: #FBE9EC; color: var(--rose-deep); }
+
+  .done { display: none; text-align: center; padding: 24px 4px 8px; }
+  .done.show { display: block; }
+  .done .mark {
+    width: 64px; height: 64px; margin: 0 auto 16px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    display: grid; place-items: center;
+    color: var(--rose); font-size: 28px;
+  }
+  .done h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 22px; color: var(--rose-deep); }
+  .done p { margin: 0; color: var(--ink-soft); }
+
+  footer { text-align: center; padding: 0 20px 40px; font-size: 13px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <svg class="halo" viewBox="0 0 400 400" aria-hidden="true">
+    <circle class="core" cx="200" cy="200" r="92"/>
+    <circle class="ring" cx="200" cy="200" r="130" stroke-width="1.2"/>
+    <circle class="ring" cx="200" cy="200" r="160" stroke-width="1"/>
+    <circle class="ring" cx="200" cy="200" r="190" stroke-width=".8"/>
+  </svg>
+  <div class="hero-inner">
+    <h1>回到愛裡</h1>
+    <p class="sub">工作坊・台中場</p>
+    <span class="date">2026.12.12（六）</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <div>
+    <section class="story">
+      <h2>活動緣起</h2>
+      <p>在近期的家族排列中，我們看見：人為了尋求安全感，常會不自覺地投射，並反覆上演帶有強烈情緒的生命劇碼。然而在這些看似紛亂的情節背後，其實都指向同一個渴望——確認那份恆常不變的愛始終都在。</p>
+      <p>過程中，也有部分夥伴的議題值得投入更充裕的時間，透過「重歷／整合／回歸中心」的親身體驗，循序漸進地看見與釐清。因此，我們規劃於十二月在台中舉辦本次工作坊，邀請新舊夥伴相聚，為自己保留一段沉澱的時間，也在彼此的陪伴中，一同回到愛裡。</p>
+    </section>
+
+    <section class="info">
+      <h2>活動資訊</h2>
+      <dl class="facts">
+        <div><dt>活動日期</dt><dd>2026.12.12（六）</dd></div>
+        <div><dt>活動時間</dt><dd>上午 10:00 – 下午 5:30<br><span style="color:var(--ink-soft);font-weight:400;font-size:14px">9:30 開始報到</span></dd></div>
+        <div><dt>活動地點</dt><dd>慕曦香遇會所<br>台中市北區福壽街1號<br><span style="color:var(--ink-soft);font-weight:400;font-size:14px">台中捷運文心中清站出口</span></dd></div>
+        <div><dt>活動費用</dt><dd>NT$3,600</dd></div>
+        <div><dt>成團人數</dt><dd>16 人（至多 30 人）</dd></div>
+      </dl>
+    </section>
+
+    <section class="info">
+      <h2>報名須知</h2>
+      <ol class="notes">
+        <li>請先報名，成團後會通知繳費網址，感謝。</li>
+        <li>工作坊不用準備任何東西，人與靈魂到場即可。</li>
+      </ol>
+    </section>
+  </div>
+
+  <aside class="form-panel" id="signup">
+    <h2>報名表單</h2>
+    <p class="form-hint">標示 <span class="req">*</span> 為必填</p>
+
+    <form id="regForm" novalidate>
+      <div class="field" data-field="name">
+        <label for="name">姓名<span class="req">*</span></label>
+        <input type="text" id="name" name="name" autocomplete="name" required>
+        <div class="err">請填寫姓名</div>
+      </div>
+
+      <div class="field" data-field="phone">
+        <label for="phone">手機<span class="req">*</span></label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="0912345678" required>
+        <div class="err">請填寫有效的手機號碼</div>
+      </div>
+
+      <div class="field" data-field="email">
+        <label for="email">Email<span class="req">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+        <div class="err">請填寫有效的 Email</div>
+      </div>
+
+      <div class="field">
+        <label for="line">LINE ID<span class="opt">選填</span></label>
+        <input type="text" id="line" name="line">
+      </div>
+
+      <div class="field" data-field="experience">
+        <span class="legend" id="expLabel">是否參加過家族排列或相關課程<span class="req">*</span></span>
+        <div class="choices" role="radiogroup" aria-labelledby="expLabel">
+          <label class="choice"><input type="radio" name="experience" value="是"><span>是</span></label>
+          <label class="choice"><input type="radio" name="experience" value="否"><span>否</span></label>
+        </div>
+        <div class="err">請選擇一項</div>
+      </div>
+
+      <div class="field">
+        <label for="intention">想帶來的議題或期待<span class="opt">選填</span></label>
+        <textarea id="intention" name="intention"></textarea>
+      </div>
+
+      <div class="field">
+        <label for="note">其他備註<span class="opt">選填</span></label>
+        <textarea id="note" name="note" style="min-height:64px"></textarea>
+      </div>
+
+      <div class="field" data-field="agree">
+        <label class="agree">
+          <input type="checkbox" id="agree" name="agree">
+          我已閱讀報名須知，了解須待成團並收到繳費通知後完成繳費，報名才算正式確認。
+        </label>
+        <div class="err">請勾選以確認已閱讀報名須知</div>
+      </div>
+
+      <button type="submit" class="submit" id="submitBtn">送出報名</button>
+      <div class="msg error" id="errorMsg" role="alert"></div>
+    </form>
+
+    <div class="done" id="doneBox" role="status" aria-live="polite">
+      <div class="mark">♡</div>
+      <h3>報名已送出</h3>
+      <p>成團後會再通知你繳費網址。期待十二月與你相聚。</p>
+    </div>
+  </aside>
+</main>
+
+<footer>回到愛裡｜工作坊・台中場</footer>
+
+<script>
+  // 部署 Apps Script 後，把網址貼在這裡
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxSlA7Z-f0rfpsDGuHBUyC69QwjUT-diTDj_SoiTBpl9JTYEOssnCtNfbi4hAfO9iA4/exec";
+
+  const form = document.getElementById("regForm");
+  const btn = document.getElementById("submitBtn");
+  const errorMsg = document.getElementById("errorMsg");
+  const doneBox = document.getElementById("doneBox");
+
+  function setInvalid(name, bad) {
+    const el = form.querySelector('[data-field="' + name + '"]');
+    if (el) el.classList.toggle("invalid", bad);
+    return !bad;
+  }
+
+  function validate() {
+    const v = (id) => document.getElementById(id).value.trim();
+    let ok = true;
+    ok = setInvalid("name", !v("name")) && ok;
+    ok = setInvalid("phone", !/^[0-9+\-\s()]{8,}$/.test(v("phone"))) && ok;
+    ok = setInvalid("email", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v("email"))) && ok;
+    ok = setInvalid("experience", !form.querySelector('input[name="experience"]:checked')) && ok;
+    ok = setInvalid("agree", !document.getElementById("agree").checked) && ok;
+    return ok;
+  }
+
+  form.addEventListener("input", (e) => {
+    const f = e.target.closest("[data-field]");
+    if (f && f.classList.contains("invalid")) validate();
+  });
+
+  function showError(text) {
+    errorMsg.textContent = text;
+    errorMsg.classList.add("show");
+  }
+
+  function closeForm(text) {
+    btn.disabled = true;
+    btn.textContent = text;
+  }
+
+  // 載入時確認是否已額滿
+  if (SCRIPT_URL) {
+    fetch(SCRIPT_URL + "?action=status")
+      .then((r) => r.json())
+      .then((d) => { if (d && d.full) { closeForm("名額已滿"); showError("本場次報名名額已滿，感謝你的關注。"); } })
+      .catch(() => {});
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    errorMsg.classList.remove("show");
+    if (!validate()) {
+      const first = form.querySelector(".invalid input, .invalid textarea");
+      if (first) first.focus();
+      return;
+    }
+    if (!SCRIPT_URL) { showError("報名系統尚未連結，請稍後再試。"); return; }
+
+    const val = (id) => document.getElementById(id).value.trim();
+    const data = {
+      name: val("name"),
+      phone: val("phone"),
+      email: val("email"),
+      line: val("line"),
+      experience: form.querySelector('input[name="experience"]:checked').value,
+      intention: val("intention"),
+      note: val("note")
+    };
+
+    btn.disabled = true;
+    btn.textContent = "送出中…";
+
+    try {
+      // 不設定 Content-Type，避免觸發 CORS 預檢
+      const res = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify(data) });
+      const out = await res.json();
+      if (out.status === "ok") {
+        form.style.display = "none";
+        doneBox.classList.add("show");
+        doneBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else if (out.status === "full") {
+        closeForm("名額已滿");
+        showError("本場次報名名額已滿，感謝你的關注。");
+      } else if (out.status === "duplicate") {
+        btn.disabled = false; btn.textContent = "送出報名";
+        showError("這支手機號碼已經報名過了，不需要重複報名。如需修改資料，請直接與我們聯繫。");
+      } else {
+        throw new Error(out.message || "unknown");
+      }
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = "送出報名";
+      showError("送出失敗，請確認網路連線後再試一次。");
+    }
+  });
+</script>
+</body>
+</html>
